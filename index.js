@@ -10,12 +10,15 @@ const draw = (obj, parent = document.body) => {
         
           const ul = document.createElement('ul');
           parent.append(ul);
-          
-          element.addEventListener('click', () => {
-            const nextNode = element.nextSibling;
-            nextNode.classList.toggle('hidden');
-          });
           obj.skills.map(skill => draw(skill, ul));
       }
     }
 }
+
+const tree = document.body;
+tree.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target.nextSibling.tagName === 'UL') {
+        target.nextSibling.classList.toggle('hidden');
+    }
+});
