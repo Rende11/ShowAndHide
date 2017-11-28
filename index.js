@@ -18,7 +18,7 @@ const draw = (obj, parent = document.body) => {
 const tree = document.body;
 tree.addEventListener('click', (e) => {
     const target = e.target;
-    if (target.nextSibling.tagName === 'UL') {
+    if (target.nextSibling && target.nextSibling.tagName === 'UL') {
         target.nextSibling.classList.toggle('hidden');
     }
 });
